@@ -1,0 +1,17 @@
+
+
+This archive contains the distribution Dancer-Plugin-FlashNote,
+version 0.9.0_01:
+
+  support notifications in your Dancer web application
+
+Copyright (C) 2011 by Flavio Poletti polettix@cpan.org.
+
+This module is free software.  You can redistribute it and/or
+modify it under the terms of the Artistic License 2.0.
+
+This program is distributed in the hope that it will be useful,
+but without any warranty; without even the implied warranty of
+merchantability or fitness for a particular purpose.
+
+
