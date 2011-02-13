@@ -15,4 +15,4 @@ name: Dancer-Plugin-FlashNote
 requires:
   Dancer: 1.2001
   perl: 5.008_000
-version: 0.9.0_01
+version: 0.9.0_02
