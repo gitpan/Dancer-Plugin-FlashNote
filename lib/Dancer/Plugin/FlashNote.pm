@@ -1,6 +1,6 @@
 package Dancer::Plugin::FlashNote;
 BEGIN {
-  $Dancer::Plugin::FlashNote::VERSION = '0.9.0_02';
+  $Dancer::Plugin::FlashNote::VERSION = '1.0.0';
 }
 
 # ABSTRACT: support notifications in your Dancer web application
@@ -153,7 +153,7 @@ Dancer::Plugin::FlashNote - support notifications in your Dancer web application
 
 =head1 VERSION
 
-version 0.9.0_02
+version 1.0.0
 
 =head1 SYNOPSIS
 

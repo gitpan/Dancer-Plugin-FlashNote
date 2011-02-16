@@ -3,7 +3,7 @@ NAME
     application
 
 VERSION
-    version 0.9.0_02
+    version 1.0.0
 
 SYNOPSIS
        # In the configuration you choose a "flash style", e.g.
