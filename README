@@ -3,14 +3,14 @@ NAME
     application
 
 VERSION
-    version 1.0.0
+    version 1.0.1
 
 SYNOPSIS
        # In the configuration you choose a "flash style", e.g.
        # notifications stored in an array and automatically
        # removed from the session when used
        plugins:
-          Flash:
+          FlashNote:
              queue:   multiple
              dequeue: when_used
 
@@ -61,7 +61,7 @@ DESCRIPTION
     Dancer::Plugin::FlashMessage:
 
       plugins:
-        Flash:
+        FlashNote:
           queue:     key_single
           arguments: single
           dequeue:   by_key
@@ -183,7 +183,7 @@ CONFIGURATION
     configuration includes all the default values:
 
       plugins:
-        Flash:
+        FlashNote:
           token_name:       flash
           session_hash_key: _flash
           queue:            multiple
@@ -336,6 +336,26 @@ CONFIGURATION
               ],
            }
 
+        In your template:
+
+           <% IF flash %>
+              <ul class="messages">
+              <% FOR message = flash.pairs %>
+                <% FOR text = message.value %>
+                 <li class="[% message.key | html %]"><% text | html %></li>
+                <% END %>
+              <% END %>
+              </ul>
+           <% END %>
+
+        Becomes:
+
+            <ul class="messages">
+                <li class="error">you made an error...</li>
+                <li class="warning">beware!</li>
+                <li class="warning">ouch!</li>
+            </ul>
+
     The default queueing style is *multiple*.
 
   Multiple Parameters
@@ -456,19 +476,7 @@ CONFIGURATION
 
     The default dequeuing style is *when_used*.
 
-DEPENDENCIES
-    Only Dancer and the bundled module Dancer::Plugin.
-
-BUGS AND LIMITATIONS
-    Curious about active bugs or want to report one? The bug tracking system
-    can be found at
-    <https://rt.cpan.org/Public/Dist/Display.html?Name=Dancer-Plugin-FlashNo
-    te>.
-
 SEE ALSO
-    If you want to contribute, check this module out in GitHub at
-    <https://github.com/polettix/Dancer-Plugin-FlashNote>.
-
     This module started from Dancer::Plugin::FlashMessage, which is an
     excellent module if its flash message style suits to your needs. You
     surely recognised that some small parts of this documentation come from

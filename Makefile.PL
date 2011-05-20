@@ -4,7 +4,7 @@ use warnings;
 
 BEGIN { require 5.008_000; }
 
-use ExtUtils::MakeMaker 6.31;
+use ExtUtils::MakeMaker 6.30;
 
 
 
@@ -13,7 +13,7 @@ my %WriteMakefileArgs = (
   'AUTHOR' => 'Flavio Poletti <polettix@cpan.org>',
   'BUILD_REQUIRES' => {},
   'CONFIGURE_REQUIRES' => {
-    'ExtUtils::MakeMaker' => '6.31'
+    'ExtUtils::MakeMaker' => '6.30'
   },
   'DISTNAME' => 'Dancer-Plugin-FlashNote',
   'EXE_FILES' => [],
@@ -22,7 +22,7 @@ my %WriteMakefileArgs = (
   'PREREQ_PM' => {
     'Dancer' => '1.2001'
   },
-  'VERSION' => '1.0.0',
+  'VERSION' => '1.0.1',
   'test' => {
     'TESTS' => 't/*.t'
   }

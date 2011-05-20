@@ -1,6 +1,6 @@
 package Dancer::Plugin::FlashNote;
 BEGIN {
-  $Dancer::Plugin::FlashNote::VERSION = '1.0.0';
+  $Dancer::Plugin::FlashNote::VERSION = '1.0.1';
 }
 
 # ABSTRACT: support notifications in your Dancer web application
@@ -153,7 +153,7 @@ Dancer::Plugin::FlashNote - support notifications in your Dancer web application
 
 =head1 VERSION
 
-version 1.0.0
+version 1.0.1
 
 =head1 SYNOPSIS
 
@@ -161,7 +161,7 @@ version 1.0.0
    # notifications stored in an array and automatically
    # removed from the session when used
    plugins:
-      Flash:
+      FlashNote:
          queue:   multiple
          dequeue: when_used
 
@@ -213,7 +213,7 @@ This configuration should give you a behaviour equivalent to
 L<Dancer::Plugin::FlashMessage>:
 
   plugins:
-    Flash:
+    FlashNote:
       queue:     key_single
       arguments: single
       dequeue:   by_key
@@ -357,7 +357,7 @@ The module works also without configurations, the following sample
 configuration includes all the default values:
 
   plugins:
-    Flash:
+    FlashNote:
       token_name:       flash
       session_hash_key: _flash
       queue:            multiple
@@ -562,6 +562,26 @@ arrays, each containing the full queue for the particular key:
       ],
    }
 
+In your template:
+
+   <% IF flash %>
+      <ul class="messages">
+      <% FOR message = flash.pairs %>
+        <% FOR text = message.value %>
+         <li class="[% message.key | html %]"><% text | html %></li>
+        <% END %>
+      <% END %>
+      </ul>
+   <% END %>
+
+Becomes:
+
+    <ul class="messages">
+        <li class="error">you made an error...</li>
+        <li class="warning">beware!</li>
+        <li class="warning">ouch!</li>
+    </ul>
+
 =back
 
 The default queueing style is I<multiple>.
@@ -695,19 +715,7 @@ the unused ones are kept in the session for usage at some later call.
 
 The default dequeuing style is I<when_used>.
 
-=head1 DEPENDENCIES
-
-Only L<Dancer> and the bundled module L<Dancer::Plugin>.
-
-=head1 BUGS AND LIMITATIONS
-
-Curious about active bugs or want to report one? The bug tracking system
-can be found at L<https://rt.cpan.org/Public/Dist/Display.html?Name=Dancer-Plugin-FlashNote>.
-
 =head1 SEE ALSO
-
-If you want to contribute, check this module out in GitHub at
-L<https://github.com/polettix/Dancer-Plugin-FlashNote>.
 
 This module started from L<Dancer::Plugin::FlashMessage>, which is an
 excellent module if its flash message style suits to your needs. You surely
