@@ -9,22 +9,22 @@ use ExtUtils::MakeMaker 6.30;
 
 
 my %WriteMakefileArgs = (
-  'ABSTRACT' => 'support notifications in your Dancer web application',
-  'AUTHOR' => 'Flavio Poletti <polettix@cpan.org>',
-  'BUILD_REQUIRES' => {},
-  'CONFIGURE_REQUIRES' => {
-    'ExtUtils::MakeMaker' => '6.30'
+  "ABSTRACT" => "support notifications in your Dancer web application",
+  "AUTHOR" => "Flavio Poletti <polettix\@cpan.org>",
+  "BUILD_REQUIRES" => {},
+  "CONFIGURE_REQUIRES" => {
+    "ExtUtils::MakeMaker" => "6.30"
   },
-  'DISTNAME' => 'Dancer-Plugin-FlashNote',
-  'EXE_FILES' => [],
-  'LICENSE' => 'artistic_2',
-  'NAME' => 'Dancer::Plugin::FlashNote',
-  'PREREQ_PM' => {
-    'Dancer' => '1.2001'
+  "DISTNAME" => "Dancer-Plugin-FlashNote",
+  "EXE_FILES" => [],
+  "LICENSE" => "artistic_2",
+  "NAME" => "Dancer::Plugin::FlashNote",
+  "PREREQ_PM" => {
+    "Dancer" => "1.2001"
   },
-  'VERSION' => '1.0.2',
-  'test' => {
-    'TESTS' => 't/*.t'
+  "VERSION" => "1.0.3",
+  "test" => {
+    "TESTS" => "t/*.t"
   }
 );
 

@@ -1,6 +1,6 @@
 package Dancer::Plugin::FlashNote;
-BEGIN {
-  $Dancer::Plugin::FlashNote::VERSION = '1.0.2';
+{
+  $Dancer::Plugin::FlashNote::VERSION = '1.0.3';
 }
 
 # ABSTRACT: support notifications in your Dancer web application
@@ -81,7 +81,7 @@ if ($dequeue eq 'by_key' and $queue !~ m{\Akey_}mxs) {
      . "with 'key_*' queueing styles";
 }
 if ($dequeue eq 'always') {
-   after sub {
+   hook after => sub {
       session $session_hash_key, undef;
    };
 }
@@ -122,7 +122,7 @@ my $template_sub = {
    },
   }->{$dequeue}
   or croak "invalid dequeuing style '$dequeue'";
-before_template $template_sub;
+hook before_template => $template_sub;
 
 register flash_flush => sub {
    my $flash = session $session_hash_key;
@@ -153,7 +153,7 @@ Dancer::Plugin::FlashNote - support notifications in your Dancer web application
 
 =head1 VERSION
 
-version 1.0.2
+version 1.0.3
 
 =head1 SYNOPSIS
 
@@ -715,7 +715,19 @@ the unused ones are kept in the session for usage at some later call.
 
 The default dequeuing style is I<when_used>.
 
+=head1 DEPENDENCIES
+
+Only L<Dancer> and the bundled module L<Dancer::Plugin>.
+
+=head1 BUGS AND LIMITATIONS
+
+Curious about active bugs or want to report one? The bug tracking system
+can be found at L<https://rt.cpan.org/Public/Dist/Display.html?Name=Dancer-Plugin-FlashNote>.
+
 =head1 SEE ALSO
+
+If you want to contribute, check this module out in GitHub at
+L<https://github.com/polettix/Dancer-Plugin-FlashNote>.
 
 This module started from L<Dancer::Plugin::FlashMessage>, which is an
 excellent module if its flash message style suits to your needs. You surely

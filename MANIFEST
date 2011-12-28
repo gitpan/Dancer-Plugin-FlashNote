@@ -4,7 +4,6 @@ MANIFEST
 META.yml
 Makefile.PL
 README
-README.md
 lib/Dancer/Plugin/FlashNote.pm
 t/00-load.t
 t/01-default.t

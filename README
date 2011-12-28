@@ -3,7 +3,7 @@ NAME
     application
 
 VERSION
-    version 1.0.2
+    version 1.0.3
 
 SYNOPSIS
        # In the configuration you choose a "flash style", e.g.
@@ -476,7 +476,19 @@ CONFIGURATION
 
     The default dequeuing style is *when_used*.
 
+DEPENDENCIES
+    Only Dancer and the bundled module Dancer::Plugin.
+
+BUGS AND LIMITATIONS
+    Curious about active bugs or want to report one? The bug tracking system
+    can be found at
+    <https://rt.cpan.org/Public/Dist/Display.html?Name=Dancer-Plugin-FlashNo
+    te>.
+
 SEE ALSO
+    If you want to contribute, check this module out in GitHub at
+    <https://github.com/polettix/Dancer-Plugin-FlashNote>.
+
     This module started from Dancer::Plugin::FlashMessage, which is an
     excellent module if its flash message style suits to your needs. You
     surely recognised that some small parts of this documentation come from
